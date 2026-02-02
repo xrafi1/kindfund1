@@ -264,7 +264,7 @@
         </div>
     </section>
 
-    <section class="py-16 bg-slate-900 text-white relative overflow-hidden">
+    <section class="py-16 bg-slate-900 text-white relative overflow-hidden" id="impact">
         <div class="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full mix-blend-overlay filter blur-3xl opacity-20"></div>
         <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl opacity-20"></div>
         
@@ -399,9 +399,9 @@
             <div class="border-t border-slate-100 pt-8 text-center md:flex md:justify-between md:text-left">
                 <p class="text-slate-400 text-sm mb-4 md:mb-0">&copy; 2026 KindFund Foundation. Barpeta Road, Assam.</p>
                 <div class="flex justify-center md:justify-end gap-6 text-sm font-medium text-slate-400">
-                    <a href="#" class="hover:text-slate-900">Privacy Policy</a>
-                    <a href="#" class="hover:text-slate-900">Terms of Service</a>
-                    <a href="#" class="hover:text-slate-900">80G Certificate</a>
+                    <a href="privacy.html" class="hover:text-slate-900">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-slate-900">Terms of Service</a>
+                    <a href="refunds.html" class="hover:text-slate-900">Refund Policy</a>
                 </div>
             </div>
         </div>
@@ -411,31 +411,21 @@
         // Donation Picker Logic
         function pick(amount, btn) {
             document.getElementById('customAmount').value = amount;
-            
-            // Reset visuals
             document.querySelectorAll('.amt-btn').forEach(b => {
                 b.className = "amt-btn py-3 rounded-xl border border-slate-200 text-slate-600 font-bold hover:bg-slate-50 transition text-lg";
             });
-            
-            // Highlight active
             btn.className = "amt-btn py-3 rounded-xl bg-green-50 border-primary text-primary ring-1 ring-primary font-bold transition text-lg shadow-inner";
         }
 
         // Navbar Scroll Effect
         window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
             const navContainer = document.getElementById('nav-container');
-            
             if (window.scrollY > 20) {
-                // Scrolled state
                 navContainer.classList.add('glass-nav');
-                navContainer.classList.remove('bg-white/60');
-                navContainer.classList.remove('border-white/50');
+                navContainer.classList.remove('bg-white/60', 'border-white/50');
             } else {
-                // Top state
                 navContainer.classList.remove('glass-nav');
-                navContainer.classList.add('bg-white/60');
-                navContainer.classList.add('border-white/50');
+                navContainer.classList.add('bg-white/60', 'border-white/50');
             }
         });
     </script>
