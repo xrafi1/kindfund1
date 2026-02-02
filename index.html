@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KindFund | Hope for Humanity</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#059669', // Emerald
+                            600: '#047857',
+                            900: '#064e3b',
+                            gold: '#f59e0b', // Warm Accent
+                        },
+                        sand: '#fffbf2', // Warm Background
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'], // Emotional, Trustworthy
+                        sans: ['Lato', 'sans-serif'], // Clean, Readable
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Custom Checkbox Design for amounts */
+        .amount-radio:checked + div {
+            background-color: #059669;
+            color: white;
+            border-color: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-sand text-gray-800 font-sans antialiased">
+
+    <nav class="absolute w-full z-50 top-0 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <a href="#" class="flex items-center gap-3">
+                    <img src="https://i.ibb.co/svMHRcFF/Green-Modern-Badge-Gardening-Logo-Design-20260202-115512-0000.png" class="h-16 w-auto bg-white/10 backdrop-blur-sm rounded-full p-1 border border-white/20">
+                    <span class="font-serif text-2xl font-bold text-white tracking-wide">KindFund</span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-white hover:text-brand-gold transition font-medium tracking-wide">Our Story</a>
+                    <a href="#impact" class="text-white hover:text-brand-gold transition font-medium tracking-wide">Programs</a>
+                    <a href="join.html" class="text-white hover:text-brand-gold transition font-medium tracking-wide">Volunteer</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-bg h-[600px] lg:h-[700px] relative flex items-center justify-center text-center px-4">
+        <div class="max-w-4xl mx-auto text-white -mt-20">
+            <p class="text-brand-gold font-bold tracking-widest uppercase mb-4 text-sm animate-pulse">Urgent Cause</p>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
+                Restore Hope.<br>Rebuild Lives.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto mb-8">
+                Thousands of families in Assam need food and education support. Your small act of kindness creates a ripple of change.
+            </p>
+        </div>
+    </section>
+
+    <div class="relative z-40 -mt-32 pb-20 px-4">
+        <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+            
+            <div class="md:w-1/3 bg-brand-900 p-8 text-white flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-32 h-32 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-48 h-48 bg-brand-500 opacity-20 rounded-full translate-x-1/3 translate-y-1/3 blur-xl"></div>
+                
+                <div class="relative z-10">
+                    <h3 class="font-serif text-2xl italic mb-6">"No act of kindness, no matter how small, is ever wasted."</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="text-3xl font-bold text-brand-gold">15,000+</div>
+                            <div class="text-sm text-gray-300">Meals Served</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-brand-gold">1,200+</div>
+                            <div class="text-sm text-gray-300">Children Educated</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 relative z-10">
+                    <p class="text-xs text-gray-400 uppercase tracking-wider mb-2">Supported By</p>
+                    <div class="flex gap-4 opacity-70">
+                        <i class="fab fa-google text-xl"></i>
+                        <i class="fab fa-aws text-xl"></i>
+                        <i class="fas fa-university text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:w-2/3 p-8 md:p-10">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="font-serif text-2xl font-bold text-gray-900">Make a Donation</h2>
+                    <span class="text-xs font-bold bg-green-100 text-green-700 px-3 py-1 rounded-full"><i class="fas fa-check-circle mr-1"></i> Tax Benefits</span>
+                </div>
+
+                <form id="donationForm" class="space-y-6">
+                    <div class="grid grid-cols-4 gap-3">
+                        <label class="cursor-pointer relative">
+                            <input type="radio" name="amount" value="100" class="amount-radio sr-only" onclick="setCustomAmt(100)">
+                            <div class="border border-gray-200 rounded-xl py-3 text-center transition-all duration-200 hover:border-brand-500 text-gray-600 font-bold">
+                                ₹100
+                            </div>
+                        </label>
+                        <label class="cursor-pointer relative">
+                            <input type="radio" name="amount" value="500" class="amount-radio sr-only" onclick="setCustomAmt(500)">
+                            <div class="border border-gray-200 rounded-xl py-3 text-center transition-all duration-200 hover:border-brand-500 text-gray-600 font-bold">
+                                ₹500
+                            </div>
+                        </label>
+                        <label class="cursor-pointer relative">
+                            <input type="radio" name="amount" value="1000" class="amount-radio sr-only" checked onclick="setCustomAmt(1000)">
+                            <div class="border border-brand-500 bg-brand-500 text-white rounded-xl py-3 text-center transition-all duration-200 font-bold shadow-md">
+                                ₹1000
+                            </div>
+                        </label>
+                        <label class="cursor-pointer relative">
+                            <input type="radio" name="amount" value="5000" class="amount-radio sr-only" onclick="setCustomAmt(5000)">
+                            <div class="border border-gray-200 rounded-xl py-3 text-center transition-all duration-200 hover:border-brand-500 text-gray-600 font-bold">
+                                ₹5000
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="relative">
+                        <input type="number" id="customAmount" value="1000" class="w-full border-b-2 border-gray-200 py-3 text-2xl font-bold text-gray-900 placeholder-gray-300 focus:outline-none focus:border-brand-500 transition-colors" placeholder="Custom Amount">
+                        <span class="absolute right-0 bottom-4 text-gray-400 text-sm font-medium">INR</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-1">
+                            <label class="text-xs font-bold text-gray-500 uppercase tracking-wider">Full Name</label>
+                            <input type="text" id="donorName" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 focus:bg-white focus:ring-2 focus:ring-brand-500 focus:outline-none transition" placeholder="John Doe">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-xs font-bold text-gray-500 uppercase tracking-wider">Phone</label>
+                            <input type="tel" id="donorPhone" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 focus:bg-white focus:ring-2 focus:ring-brand-500 focus:outline-none transition" placeholder="+91 98765 43210">
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-gray-500 uppercase tracking-wider">Email Address</label>
+                        <input type="email" id="donorEmail" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 focus:bg-white focus:ring-2 focus:ring-brand-500 focus:outline-none transition" placeholder="john@example.com">
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-600 text-white font-bold text-lg py-4 rounded-xl shadow-lg hover:bg-brand-900 hover:shadow-xl transition-all duration-300 transform active:scale-95 flex justify-center items-center gap-2">
+                        <span>Donate securely</span>
+                        <i class="fas fa-lock text-sm opacity-70"></i>
+                    </button>
+                    
+                    <p class="text-center text-xs text-gray-400 mt-4">
+                        By donating, you agree to our Terms of Use and Privacy Policy.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <section id="impact" class="py-16 bg-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Core Initiatives</h2>
+                <div class="w-20 h-1 bg-brand-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="text-center group">
+                    <div class="relative w-full h-64 rounded-2xl overflow-hidden mb-6 shadow-md">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition"></div>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-gray-900 mb-2">Education Support</h3>
+                    <p class="text-gray-600 leading-relaxed px-4">Providing books, uniforms, and tuition for children who dream of going to school.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="relative w-full h-64 rounded-2xl overflow-hidden mb-6 shadow-md">
+                        <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition"></div>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-gray-900 mb-2">Nutritional Care</h3>
+                    <p class="text-gray-600 leading-relaxed px-4">Ensuring no child sleeps hungry by distributing grocery kits to families.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="relative w-full h-64 rounded-2xl overflow-hidden mb-6 shadow-md">
+                        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition"></div>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-gray-900 mb-2">Medical Emergency</h3>
+                    <p class="text-gray-600 leading-relaxed px-4">Instant financial aid for critical surgeries and medicines for the elderly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-brand-600 pb-10 mb-10">
+                <div class="flex items-center gap-4 mb-6 md:mb-0">
+                    <img src="https://i.ibb.co/svMHRcFF/Green-Modern-Badge-Gardening-Logo-Design-20260202-115512-0000.png" class="h-16 w-auto bg-white rounded-full p-1">
+                    <div>
+                        <h2 class="font-serif text-2xl font-bold">KindFund</h2>
+                        <p class="text-brand-500 text-sm">Registered Non-Profit Organization</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center hover:bg-brand-600 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center hover:bg-brand-600 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center hover:bg-brand-600 transition"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8 text-sm text-gray-300">
+                <div>
+                    <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Contact</h4>
+                    <p>Barpeta Road, Assam</p>
+                    <p>India, 781315</p>
+                    <p class="mt-2 text-brand-500">info@kindfund.in</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-white">Our Mission</a></li>
+                        <li><a href="#impact" class="hover:text-white">Impact Stories</a></li>
+                        <li><a href="join.html" class="hover:text-white">Volunteer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="legal.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="legal.html" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="legal.html" class="hover:text-white">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4 uppercase tracking-wider">Newsletter</h4>
+                    <div class="flex">
+                        <input type="email" placeholder="Email" class="bg-brand-800 border-none rounded-l-lg px-4 py-2 w-full focus:ring-0 text-white">
+                        <button class="bg-brand-500 text-white px-4 rounded-r-lg font-bold">Go</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12 text-xs text-brand-600">
+                &copy; 2026 KindFund Foundation. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+    <script>
+        function setCustomAmt(amt) {
+            document.getElementById('customAmount').value = amt;
+            // Update UI for visually selected box (handled by CSS :checked, but syncing custom input)
+        }
+    </script>
+
+</body>
+</html>
