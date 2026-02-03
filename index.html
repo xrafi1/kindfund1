@@ -138,10 +138,10 @@
                         </div>
 
                         <div class="space-y-3 mb-6">
-                            <input type="text" id="donorName" placeholder="Full Name" class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition placeholder-slate-400">
+                            <input type="text" id="donorName" placeholder="Full Name" class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition placeholder-slate-400" required>
                             <div class="flex gap-3">
-                                <input type="email" id="donorEmail" placeholder="Email Address" class="w-1/2 bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition placeholder-slate-400">
-                                <input type="tel" id="donorPhone" placeholder="Mobile" class="w-1/2 bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition placeholder-slate-400">
+                                <input type="email" id="donorEmail" placeholder="Email Address" class="w-1/2 bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition placeholder-slate-400" required>
+                                <input type="tel" id="donorPhone" placeholder="Mobile" class="w-1/2 bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition placeholder-slate-400" required>
                             </div>
                         </div>
 
@@ -407,8 +407,28 @@
         </div>
     </footer>
 
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+
     <script>
-        // Donation Picker Logic
+        // 1. Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyA8pDzeJM8vlBpONEVmDuCGe0kgX9DQ-h8",
+            authDomain: "kindfund.firebaseapp.com",
+            projectId: "kindfund",
+            storageBucket: "kindfund.firebasestorage.app",
+            messagingSenderId: "195133397316",
+            appId: "1:195133397316:web:eecf547352464272f11f11",
+            measurementId: "G-Q2QS702LRV"
+        };
+
+        // 2. Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const analytics = firebase.analytics();
+        const db = firebase.firestore();
+
+        // 3. UI Interactions
         function pick(amount, btn) {
             document.getElementById('customAmount').value = amount;
             document.querySelectorAll('.amt-btn').forEach(b => {
@@ -427,6 +447,17 @@
                 navContainer.classList.remove('glass-nav');
                 navContainer.classList.add('bg-white/60', 'border-white/50');
             }
+        });
+
+        // 4. Handle Donation (Placeholder for Payment Integration)
+        document.getElementById('donationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const amount = document.getElementById('customAmount').value;
+            const name = document.getElementById('donorName').value;
+            
+            // This is where you would call Cashfree/Razorpay
+            // And then save to Firebase: db.collection('donations').add({ ... })
+            alert(`Thank you ${name}! Proceeding to pay ₹${amount}... (Integration Pending)`);
         });
     </script>
 </body>
