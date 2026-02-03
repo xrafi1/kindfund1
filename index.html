@@ -3,18 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KindFund | Give Hope, Save a Future</title>
+    <title>Volunteer | KindFund</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { primary: '#059669', primaryDark: '#047857', dark: '#0f172a' },
-                    fontFamily: { sans: ['DM Sans', 'sans-serif'] },
-                    animation: { 'blob': 'blob 7s infinite', 'float': 'float 3s ease-in-out infinite' },
+                    colors: {
+                        primary: '#059669',
+                        primaryDark: '#047857',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
                     keyframes: {
-                        blob: { '0%': { transform: 'translate(0px, 0px) scale(1)' }, '33%': { transform: 'translate(30px, -50px) scale(1.1)' }, '66%': { transform: 'translate(-20px, 20px) scale(0.9)' }, '100%': { transform: 'translate(0px, 0px) scale(1)' } },
-                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
                     }
                 }
             }
@@ -22,17 +40,30 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         body { font-family: 'DM Sans', sans-serif; }
-        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.5); }
-        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden relative min-h-screen">
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden relative min-h-screen flex flex-col">
 
     <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-green-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
         <div class="absolute top-0 right-1/4 w-96 h-96 bg-teal-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-1/3 w-96 h-96 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
     </div>
 
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4 px-4 md:px-6">
@@ -41,125 +72,131 @@
                 <img src="https://i.ibb.co/svMHRcFF/Green-Modern-Badge-Gardening-Logo-Design-20260202-115512-0000.png" alt="KindFund Logo" class="h-10 w-10 rounded-full shadow-sm bg-white p-0.5">
                 <span class="font-bold text-lg tracking-tight text-slate-900">Kind<span class="text-primary">Fund</span></span>
             </a>
+            
             <div class="hidden md:flex gap-8 text-sm font-medium text-slate-600">
-                <a href="#about" class="hover:text-primary transition">About Us</a>
-                <a href="#programs" class="hover:text-primary transition">Programs</a>
-                <a href="join.html" class="hover:text-primary transition">Volunteer</a>
+                <a href="index.html#about" class="hover:text-primary transition">About Us</a>
+                <a href="index.html#programs" class="hover:text-primary transition">Programs</a>
+                <a href="join.html" class="text-primary font-bold transition">Volunteer</a>
                 <a href="contact.html" class="hover:text-primary transition">Contact</a>
             </div>
-            <a href="#donate" class="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-primary transition shadow-lg shadow-slate-900/20">Donate Now</a>
+
+            <a href="index.html#donate" class="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-primary transition shadow-lg shadow-slate-900/20">
+                Donate Now
+            </a>
         </div>
     </nav>
 
-    <div class="relative z-10 flex flex-col items-center justify-center pt-32 pb-20 px-4" id="donate">
-        <div class="text-center max-w-4xl mx-auto mb-10 animate-float">
-            <div class="inline-flex items-center gap-2 bg-white/80 border border-green-100 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6 shadow-sm">
-                <span class="flex h-2 w-2 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span>
-                <span class="text-xs font-bold text-emerald-700 uppercase tracking-wide">Community Driven • 100% Transparent</span>
-            </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">Give hope.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-500">Save a future.</span></h1>
-            <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">Your contribution directly supports education, nutrition, and emergency relief in rural India.</p>
-        </div>
+    <main class="flex-grow relative z-10 pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                
+                <div class="animate-float">
+                    <div class="inline-flex items-center gap-2 bg-green-100/80 border border-green-200 rounded-full px-4 py-1.5 mb-6">
+                        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wide">Join 200+ Active Volunteers</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
+                        Be the change <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-500">you wish to see.</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Volunteering with KindFund is more than just service; it's about building a community of empathy. Whether you can teach, cook, or organize events, we have a spot for you.
+                    </p>
 
-        <div class="w-full max-w-md">
-            <div class="glass-card rounded-3xl p-2 shadow-2xl ring-1 ring-black/5 relative">
-                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary to-teal-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg z-20"><i class="fas fa-shield-alt mr-1"></i> 100% Secure Donation</div>
-                <div class="bg-white/90 rounded-[1.3rem] p-6 md:p-8">
-                    <form id="donationForm">
-                        <div class="mb-6">
-                            <label class="text-xs font-bold text-slate-400 uppercase mb-3 block text-center tracking-wider">Select Amount (INR)</label>
-                            <div class="grid grid-cols-3 gap-3">
-                                <button type="button" onclick="pick(100, this)" class="amt-btn py-3 rounded-xl border border-slate-200 text-slate-600 font-bold hover:bg-slate-50 transition text-lg">100</button>
-                                <button type="button" onclick="pick(500, this)" class="amt-btn py-3 rounded-xl bg-green-50 border-primary text-primary ring-1 ring-primary font-bold transition text-lg shadow-inner">500</button>
-                                <button type="button" onclick="pick(1000, this)" class="amt-btn py-3 rounded-xl border border-slate-200 text-slate-600 font-bold hover:bg-slate-50 transition text-lg">1000</button>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary text-xl"></i>
+                            <span class="text-slate-700 font-medium">Certificate of Service provided</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary text-xl"></i>
+                            <span class="text-slate-700 font-medium">Flexible weekends available</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary text-xl"></i>
+                            <span class="text-slate-700 font-medium">Make a direct impact on the ground</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10 shadow-2xl relative">
+                    <div class="absolute -top-4 -right-4 bg-yellow-400 text-slate-900 text-xs font-bold px-4 py-2 rounded-full shadow-lg transform rotate-3">
+                        Accepting Now
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Volunteer Application</h3>
+                    <p class="text-slate-500 text-sm mb-6">Fill out the form and our coordinator will contact you.</p>
+                    
+                    <form id="volunteerForm" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Full Name</label>
+                            <input type="text" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition" required>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Email</label>
+                                <input type="email" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition" required>
                             </div>
-                            <div class="mt-3 relative">
-                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">₹</span>
-                                <input type="number" id="customAmount" value="500" class="w-full text-center pl-4 border-b-2 border-slate-200 py-3 bg-transparent font-bold text-2xl text-slate-900 focus:outline-none focus:border-primary transition" placeholder="Custom">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Phone</label>
+                                <input type="tel" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition" required>
                             </div>
                         </div>
-                        <div class="space-y-3 mb-6">
-                            <input type="text" id="donorName" placeholder="Full Name" class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 outline-none transition" required>
-                            <div class="flex gap-3">
-                                <input type="email" id="donorEmail" placeholder="Email" class="w-1/2 bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 outline-none transition" required>
-                                <input type="tel" id="donorPhone" placeholder="Mobile" class="w-1/2 bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 outline-none transition" required>
-                            </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">How can you help?</label>
+                            <select class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition">
+                                <option>Teaching Kids</option>
+                                <option>Food Distribution</option>
+                                <option>Medical Camps</option>
+                                <option>Event Management</option>
+                                <option>Social Media / Tech</option>
+                            </select>
                         </div>
-                        <button type="submit" class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold text-lg shadow-xl hover:bg-black transition flex justify-center items-center gap-2 group">
-                            <span>Donate Now</span><i class="fas fa-heart text-red-500 animate-pulse-slow"></i>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Why do you want to join? (Optional)</label>
+                            <textarea rows="3" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:bg-primary transition mt-2">
+                            Submit Application
                         </button>
-                        <div class="mt-4 text-center">
-                            <p class="text-[10px] text-slate-400"><i class="fas fa-check-circle text-green-500"></i> Verified Social Impact • Secure Payment</p>
-                        </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
-
-    <section id="about" class="py-20 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000&auto=format&fit=crop" class="rounded-3xl shadow-2xl w-full object-cover h-[500px]">
-            <div>
-                <span class="text-primary font-bold text-sm uppercase tracking-widest mb-2 block">Who We Are</span>
-                <h2 class="text-4xl font-bold text-slate-900 mb-6">Driven by Empathy, <br>Fueled by Action.</h2>
-                <p class="text-slate-600 text-lg mb-6">KindFund began with a simple mission: to ensure no child sleeps hungry. We believe in <strong>radical transparency</strong>—every rupee is accounted for.</p>
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-primary"><i class="fas fa-check"></i></div><div><h4 class="font-bold text-slate-900">Zero Admin Fees</h4></div></div>
-                    <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600"><i class="fas fa-file-invoice"></i></div><div><h4 class="font-bold text-slate-900">Monthly Reports</h4></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <footer class="bg-white border-t border-slate-100 pt-16 pb-8 relative z-10">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 text-left">
-                <div class="md:col-span-2">
-                    <a href="#" class="flex items-center gap-2 mb-4"><img src="https://i.ibb.co/svMHRcFF/Green-Modern-Badge-Gardening-Logo-Design-20260202-115512-0000.png" class="h-10 w-10 rounded-full"><span class="font-bold text-xl text-slate-900">KindFund</span></a>
-                    <p class="text-slate-500">Making philanthropy simple, transparent, and impactful.</p>
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center md:flex md:justify-between md:text-left">
+                <p class="text-slate-400 text-sm mb-4 md:mb-0">&copy; 2026 KindFund Foundation. Barpeta Road, Assam.</p>
+                <div class="flex justify-center md:justify-end gap-6 text-sm font-medium text-slate-400">
+                    <a href="index.html" class="hover:text-slate-900">Home</a>
+                    <a href="join.html" class="text-slate-900">Volunteer</a>
+                    <a href="contact.html" class="hover:text-slate-900">Contact</a>
                 </div>
-                <div><h4 class="font-bold text-slate-900 mb-4">Quick Links</h4><ul class="space-y-3 text-sm text-slate-500"><li><a href="join.html">Volunteer</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-            </div>
-            <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-slate-400 text-sm mb-4 md:mb-0">&copy; 2026 KindFund Foundation.</p>
-                <div class="flex gap-6 text-sm font-medium text-slate-400"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refunds.html">Refunds</a></div>
             </div>
         </div>
     </footer>
 
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
     <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyA8pDzeJM8vlBpONEVmDuCGe0kgX9DQ-h8",
-            authDomain: "kindfund.firebaseapp.com",
-            projectId: "kindfund",
-            storageBucket: "kindfund.firebasestorage.app",
-            messagingSenderId: "195133397316",
-            appId: "1:195133397316:web:eecf547352464272f11f11",
-            measurementId: "G-Q2QS702LRV"
-        };
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-
-        function pick(amount, btn) {
-            document.getElementById('customAmount').value = amount;
-            document.querySelectorAll('.amt-btn').forEach(b => b.className = "amt-btn py-3 rounded-xl border border-slate-200 text-slate-600 font-bold hover:bg-slate-50 transition text-lg");
-            btn.className = "amt-btn py-3 rounded-xl bg-green-50 border-primary text-primary ring-1 ring-primary font-bold transition text-lg shadow-inner";
-        }
-
+        // Navbar Scroll Effect
         window.addEventListener('scroll', function() {
             const navContainer = document.getElementById('nav-container');
-            if (window.scrollY > 20) { navContainer.classList.add('glass-nav'); navContainer.classList.remove('bg-white/60', 'border-white/50'); } 
-            else { navContainer.classList.remove('glass-nav'); navContainer.classList.add('bg-white/60', 'border-white/50'); }
+            if (window.scrollY > 20) {
+                navContainer.classList.add('glass-nav');
+                navContainer.classList.remove('bg-white/60', 'border-white/50');
+            } else {
+                navContainer.classList.remove('glass-nav');
+                navContainer.classList.add('bg-white/60', 'border-white/50');
+            }
         });
 
-        document.getElementById('donationForm').addEventListener('submit', function(e) {
+        document.getElementById('volunteerForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const amt = document.getElementById('customAmount').value;
-            const name = document.getElementById('donorName').value;
-            alert(`Thank you ${name}! Redirecting to pay ₹${amt}...`);
+            alert('Application submitted! Welcome to the team.');
         });
     </script>
 </body>
