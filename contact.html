@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support | KindFund</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#059669', primaryDark: '#047857', dark: '#0f172a' },
+                    fontFamily: { sans: ['DM Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'DM Sans', sans-serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden relative min-h-screen">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 py-4 px-4 md:px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="h-10 w-10 bg-slate-100 rounded-full flex items-center justify-center group-hover:bg-slate-200 transition">
+                    <i class="fas fa-arrow-left text-slate-600"></i>
+                </div>
+                <img src="https://i.ibb.co/svMHRcFF/Green-Modern-Badge-Gardening-Logo-Design-20260202-115512-0000.png" alt="KindFund Logo" class="h-8 w-8 rounded-full">
+                <span class="font-bold text-lg tracking-tight text-slate-900 hidden md:block">Back to Home</span>
+            </a>
+            <span class="text-sm font-bold text-slate-400 uppercase tracking-widest">Support</span>
+        </div>
+    </nav>
+
+    <div class="pt-32 pb-12 px-4 text-center max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">We're here to help.</h1>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Have a question about your donation, tax receipt, or our programs? Reach out to us.
+        </p>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 pb-20 grid grid-cols-1 md:grid-cols-2 gap-12">
+        
+        <div class="space-y-8 py-4">
+            <div class="flex gap-4">
+                <div class="h-12 w-12 rounded-xl bg-green-100 flex items-center justify-center text-primary text-xl shrink-0">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-slate-900">Email Us</h3>
+                    <p class="text-slate-500 text-sm mb-1">For general inquiries and tax receipts.</p>
+                    <a href="mailto:support@kindfund.org" class="text-primary font-bold hover:underline">support@kindfund.org</a>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="h-12 w-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-500 text-xl shrink-0">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-slate-900">Call Us</h3>
+                    <p class="text-slate-500 text-sm mb-1">Mon-Fri from 9am to 6pm IST.</p>
+                    <a href="tel:+911234567890" class="text-slate-800 font-bold hover:text-primary transition">+91 98765 43210</a>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="h-12 w-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-500 text-xl shrink-0">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-slate-900">Visit Us</h3>
+                    <p class="text-slate-500 text-sm">
+                        KindFund Foundation<br>
+                        Station Road, Barpeta Road<br>
+                        Assam, India - 781315
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-6 border-t border-slate-200">
+                <h4 class="font-bold text-slate-900 mb-3">Quick Answers</h4>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Donations are 100% Tax Deductible (80G).</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Receipts are emailed immediately.</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> We do not accept cash donations.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Your Name</label>
+                    <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition" placeholder="Enter name">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Email Address</label>
+                    <input type="email" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition" placeholder="Enter email">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Subject</label>
+                    <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition text-slate-600">
+                        <option>Donation Issue</option>
+                        <option>Tax Receipt Not Received</option>
+                        <option>Partnership Inquiry</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Message</label>
+                    <textarea rows="4" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition" placeholder="How can we help?"></textarea>
+                </div>
+
+                <button type="button" onclick="alert('Message Sent! Support will reply within 24 hours.')" class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold text-lg hover:bg-primary transition shadow-lg shadow-slate-900/20">
+                    Send Message
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer class="bg-white border-t border-slate-100 py-10">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-500 text-sm mb-4">&copy; 2026 KindFund Foundation. All rights reserved.</p>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-sm font-medium text-slate-400">
+                <a href="index.html" class="hover:text-slate-900">Home</a>
+                <span class="text-slate-300 hidden md:inline">•</span>
+                <a href="join.html" class="hover:text-slate-900">Volunteer</a>
+                <span class="text-slate-300 hidden md:inline">•</span>
+                <a href="contact.html" class="text-slate-900 font-bold">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
